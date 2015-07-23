@@ -23,6 +23,8 @@ $tables[] = "CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(30) NOT NULL DEFAULT '0',
   `password` varchar(100) NOT NULL DEFAULT '0',
   `user_key` varchar(100) NOT NULL DEFAULT '0',
+  `created_at` int(11) DEFAULT NULL,
+  `last_login` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 

@@ -19,6 +19,11 @@ class User {
 		{
 			if ($res[0]["password"] == password_hash($password, PASSWORD_BCRYPT, array("salt" => $res[0]["user_key"])))
 			{
+				$query = "UPDATE users SET last_login = ? WHERE username = ?";
+				$sth = $db->prepare($query);
+				$sth->bindParam(1, time(), PDO::PARAM_STR);
+				$sth->bindParam(2, $user);
+				$sth->execute();
 				return array("username" => $res[0]["username"]);
 			}
 			else
@@ -70,13 +75,14 @@ class User {
 			$db = Database::getDBInstance();
 		}
 
-		$query = "INSERT INTO users (username, email, password, user_key) VALUES (?, ?, ?, ?)";
+		$query = "INSERT INTO users (username, email, password, user_key, created_at) VALUES (?, ?, ?, ?, ?)";
 		$sth = $db->prepare($query);
 		$sth->bindParam(1, $user);
 		$sth->bindParam(2, $email);
 		$password = $this->createPassword($password);
 		$sth->bindParam(3, $password['password']);
 		$sth->bindParam(4, $password['salt']);
+		$sth->bindParam(5, time());
 		$sth->execute();
 	}
 }
