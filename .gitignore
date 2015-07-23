@@ -1,3 +1,4 @@
 /tpl/templates_compiled/*
 /tpl/templates_cached/*
 /inc/config.php
+/install/lock
