@@ -33,6 +33,7 @@ $zncweb->user = new User();
 if (!isset($_SESSION['zncweb']['user']) && !defined("LOGIN_PAGE"))
 {
 	header("Location: login.php");
+	die();
 }
 
 if ((isset($_SESSION['zncweb']['user']['user_agent'])) && $_SESSION['zncweb']['user']['user_agent'] !== md5($_SERVER['HTTP_USER_AGENT']))
@@ -41,6 +42,11 @@ if ((isset($_SESSION['zncweb']['user']['user_agent'])) && $_SESSION['zncweb']['u
 	if (!defined("LOGIN_PAGE"))
 		header("Location: login.php");
 	die();
+}
+
+if (isset($_SESSION['zncweb']['user']))
+{
+	$zncweb->tpl->assign("username", $_SESSION['zncweb']['user']['username']);
 }
 
 
