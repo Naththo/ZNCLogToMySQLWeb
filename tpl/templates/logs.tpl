@@ -3,21 +3,26 @@
 		<div class="container">
 			<h1>Logs</h1>
 
-			<nav>
-		<ul class="pager">
-			{if $olderpage === false}
-		 	<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
-		 	{else}
-		 	<li class="previous"><a href="?page={$olderpage}"><span aria-hidden="true">&larr;</span> Older</a></li>
-		 	{/if}
-		 	{if $newerpage === false}
-			<li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+			{if (!$data)}
+			<div class="alert alert-danger" role="alert">
+				<strong>Uh-oh!</strong><br />
+				We could not find any logs. Are you using the correct database? Check in /inc/config.php
+			</div>
 			{else}
-			<li class="next"><a href="?page={$newerpage}">Newer <span aria-hidden="true">&rarr;</span></a></li>
-			{/if}
-		  </ul>
-		</nav>
-
+			<nav>
+				<ul class="pager">
+					{if $olderpage === false}
+				 	<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+				 	{else}
+				 	<li class="previous"><a href="?page={$olderpage}"><span aria-hidden="true">&larr;</span> Older</a></li>
+				 	{/if}
+				 	{if $newerpage === false}
+					<li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+					{else}
+					<li class="next"><a href="?page={$newerpage}">Newer <span aria-hidden="true">&rarr;</span></a></li>
+					{/if}
+				</ul>
+			</nav>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -38,5 +43,6 @@
 					{/foreach}
 				</tbody>
 			</table>
+			{/if}
 		</div>
 		{/block}
