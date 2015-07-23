@@ -19,6 +19,10 @@ if (isset($_POST['login-submit']))
 		$_SESSION['zncweb']['user']['user_agent'] = md5($_SERVER['HTTP_USER_AGENT']);
 		header("Location: logs.php");
 	}
+	else
+	{
+		$zncweb->tpl->assign("login_error", true);
+	}
 }
 
 $zncweb->tpl->assign("page_title", "Login");

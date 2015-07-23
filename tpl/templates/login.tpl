@@ -9,6 +9,15 @@
 							<hr>
 						</div>
 						<div class="panel-body">
+							{if isset($login_error)}
+							<div class="alert alert-danger" role="alert">
+								<a href="#" class="close" data-dismiss="alert"><i class="fa fa-times"></i></a>
+								<i class="fa fa-exclamation-triangle"></i>
+								<span>
+									<strong>Error: </strong> Your username and password combination could not be validated.
+								</span>
+							</div>
+							{/if}
 							<div class="row">
 								<div class="col-lg-12">
 									<form id="login-form" action="login.php" method="post" role="form" style="display: block;">
