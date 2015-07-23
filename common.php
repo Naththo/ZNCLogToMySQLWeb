@@ -16,8 +16,7 @@ $zncweb->tpl->setCacheDir("./tpl/templates_cached");
 
 if (!file_exists("inc/config.php"))
 {
-	$zncweb->tpl->assign("page_title", "Lol");
-	$zncweb->tpl->display("head.tpl");
+	header("Location: install");
 }
 
 require_once("./inc/config.php");
@@ -34,7 +33,6 @@ $zncweb->user = new User();
 if (!isset($_SESSION['zncweb']['user']) && !defined("LOGIN_PAGE"))
 {
 	header("Location: login.php");
-	die("wat");
 }
 
 if ((isset($_SESSION['zncweb']['user']['user_agent'])) && $_SESSION['zncweb']['user']['user_agent'] !== md5($_SERVER['HTTP_USER_AGENT']))
