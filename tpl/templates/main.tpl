@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>{if isset($page_title)}{$page_title} {else} {/if}</title>
+		<title>{if isset($page_title)}{$page_title}{else} {/if}</title>
 		<link href="tpl/templates/css/bootstrap.min.css" rel="stylesheet">
 		<link href="tpl/templates/css/non-responsive.css" rel="stylesheet">
 	</head>
