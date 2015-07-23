@@ -39,7 +39,6 @@ if (!isset($_SESSION['zncweb']['user']) && !defined("LOGIN_PAGE"))
 
 if ((isset($_SESSION['zncweb']['user']['user_agent'])) && $_SESSION['zncweb']['user']['user_agent'] !== md5($_SERVER['HTTP_USER_AGENT']))
 {
-	die("yes");
 	unset($_SESSION['zncweb']['user']);
 	if (!defined("LOGIN_PAGE"))
 		header("Location: login.php");
