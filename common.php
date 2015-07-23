@@ -14,6 +14,8 @@ $zncweb->tpl->setTemplateDir("./tpl/templates/");
 $zncweb->tpl->setCompileDir("./tpl/templates_compiled");
 $zncweb->tpl->setCacheDir("./tpl/templates_cached");
 
+$zncweb->tpl->assign("sitename", "ZNC Web Log");
+
 if (!file_exists("inc/config.php"))
 {
 	header("Location: install");

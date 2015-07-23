@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>{if isset($page_title)}{$page_title}{else} {/if}</title>
+		<title>{if isset($page_title, $sitename)}{$sitename} | {$page_title}{else} {/if}</title>
 		<link href="tpl/templates/css/bootstrap.min.css" rel="stylesheet">
 		<link href="tpl/templates/css/non-responsive.css" rel="stylesheet">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
