@@ -1,7 +1,7 @@
 <?PHP
 
 require_once("common.php");
-define("PAGE_TITLE", "hi");
+define("PAGE_TITLE", "Logs");
 if (isset($_GET['page']))
 {
 	$current = $_GET['page'];

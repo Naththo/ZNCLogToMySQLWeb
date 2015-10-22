@@ -28,6 +28,7 @@
 					<tr>
 						<th>ID</th>
 						<th>Target</th>
+						<th>Time</th>
 						<th>Nick</th>
 						<th>Message</th>
 					</tr>
@@ -37,6 +38,7 @@
 					<tr>
 						<td>{$dat['id']}</td>
 						<td>{$dat['target']}</td>
+						<td>{$dat['time']}</td>
 						<td>{$dat['nick']}</td>
 						<td>{$dat['message']}</td>
 					</tr>

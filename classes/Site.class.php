@@ -31,6 +31,12 @@ class Site {
 		$sth->execute();
 
 		$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+		for ($i = 0; $i < sizeof($result); $i++)
+		{
+			$result[$i]['time'] = date("d-m-Y h:i:s A", (int)$result[$i]['timestamp']);
+		}
+
 		return $result;
 	}
 }
