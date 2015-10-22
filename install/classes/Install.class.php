@@ -9,6 +9,11 @@ class Install {
 		$tocheck = array("../inc", "../tpl/templates_compiled", "../install");
 		foreach ($tocheck as $check)
 		{
+			if (!file_exists($check))
+			{
+				mkdir($check);
+			}
+
 			if (!is_writable($check))
 			{
 				$errors[] = $check;
